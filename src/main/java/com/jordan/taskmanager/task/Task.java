@@ -10,7 +10,12 @@ public class Task {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private Long parentId;
+	private Long userCreatedId;
+	private Long userAssignedId;
+	private Long projectNumber;
 	private String name;
+	private String dueDate;
 	
 	public Task() {}
 	

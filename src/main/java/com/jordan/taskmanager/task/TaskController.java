@@ -1,5 +1,6 @@
 package com.jordan.taskmanager.task;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ public class TaskController {
 	}
 	
 	@GetMapping("/test-tasks")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public Collection<Task> testTasks() {
 		return repository.findAll().stream().filter(this::isTest).collect(Collectors.toList());
 	}
