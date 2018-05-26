@@ -1,0 +1,19 @@
+<h2>Task Details</h2>
+<div *ngIf="task">
+  <div><button (click)="goBack()">go back</button></div>
+  <div>
+    <div><label>Task ID: </label> {{task.id}}</div>
+    <div><label>Project Number: </label> {{task.projectNum}}</div>
+    <div><label>Name: </label> {{task.name}}</div>
+    <div><label>Date Due: </label> {{task.dateDue}}</div>
+    <div><label>Created By: </label> {{task.createdBy}}</div>
+    <div><a routerLink="subtasks">Subtasks</a></div>
+    <div><label>Priority: </label> {{task.priority}}</div>
+    <div><label>Assigned User: </label> {{task.assignedUserName}}</div>
+    <div><label>Category: </label> {{task.category}}</div>
+    <div><label>Description: </label> {{task.description}}</div>
+    <div><label>Notes: </label> {{task.notes}}</div>
+    <div><label>Percent Complete: </label> {{task.percentComplete}}</div>
+  </div>
+</div>
+<router-outlet></router-outlet>

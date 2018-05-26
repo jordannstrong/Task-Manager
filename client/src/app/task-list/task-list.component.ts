@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../shared/task/task.service';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-task-list',
@@ -9,15 +10,19 @@ import { TaskService } from '../shared/task/task.service';
 })
 export class TaskListComponent implements OnInit {
   tasks: Array<any>;
+  selectedTask : Task;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-    this.taskService.getAll().subscribe(
-      data => {
-        this.tasks = data;
-      },
-      error => console.log(error)
-    )
+    this.getTasks();
+  }
+
+  getTasks(): void {
+    this.taskService.getAll().subscribe(tasks => this.tasks = tasks);
+  }
+
+  onSelect(task: Task): void {
+    this.selectedTask = task;
   }
 }

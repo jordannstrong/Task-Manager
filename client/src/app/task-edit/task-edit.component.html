@@ -1,0 +1,13 @@
+<h2>Task Details</h2>
+<div *ngIf="task">
+  <div>
+    <form (ngSubmit)="onSubmit()">
+        <label>Name:
+          <input type="text" #inputVal (ngModel)="name" placeholder={{task.name}}/>
+        </label>
+        <button (click)="save(inputVal.value)">save</button>
+    </form>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>
+<router-outlet></router-outlet>

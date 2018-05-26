@@ -1,4 +1,5 @@
-<h2>Task List</h2>
+<h2>Subtask List</h2>
+<div><button (click)="goBack()">go back</button></div>
 <ul class="tasks">
   <li *ngFor="let t of tasks">
     <a routerLink="/detail/{{t.id}}" routerLinkActive="active">
