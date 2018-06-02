@@ -1,13 +1,53 @@
 <h2>Task Details</h2>
 <div *ngIf="task">
-  <div>
-    <form (ngSubmit)="onSubmit()">
-        <label>Name:
-          <input type="text" #inputVal (ngModel)="name" placeholder={{task.name}}/>
-        </label>
-        <button (click)="save(inputVal.value)">save</button>
-    </form>
-  </div>
-  <button (click)="goBack()">go back</button>
+  <div><button (click)="goBack()">go back</button></div>
+  <form>
+    <div class="form-group">
+      <label for="id">Task ID: </label> 
+      <input type="text" class="form-control" id="id" required [(ngModel)]="task.id" name="id" value={{task.id}}>
+    </div>
+    <div class="form-group">
+      <label for="projectNum">Project Number: </label> 
+      <input type="text" class="form-control" id="projectNum" required [(ngModel)]="task.projectNum" name="projectNum" value={{task.projectNum}}>
+    </div>
+    <div class="form-group">
+      <label for="name">Name: </label> 
+      <input type="text" class="form-control" id="name" required [(ngModel)]="task.name" name="name" value={{task.name}}>
+    </div>
+    <div class="form-group">
+      <label for="dateDue">Date Due: </label> 
+      <input type="text" class="form-control" id="dateDue" required [(ngModel)]="task.dateDue" name="dateDue" value={{task.dateDue}}>
+    </div>
+    <div class="form-group">
+      <label for="createdBy">Created By: </label> 
+      <input type="text" class="form-control" id="createdBy" required [(ngModel)]="task.createdBy" name="createdBy" value={{task.createdBy}}>
+    </div>
+    <div class="form-group">
+      <label for="priority">Priority: </label> 
+      <input type="text" class="form-control" id="priority" required [(ngModel)]="task.priority" name="priority" value={{task.priority}}>
+    </div>
+    <div class="form-group">
+      <label for="assignedUser">Assigned User: </label> 
+      <input type="text" class="form-control" id="assignedUser" required [(ngModel)]="task.assignedUser" name="assignedUser" value={{task.assignedUser}}>
+    </div>
+    <div class="form-group">
+      <label for="category">Category: </label> 
+      <input type="text" class="form-control" id="category" required [(ngModel)]="task.category" name="category" value={{task.category}}>
+    </div>
+    <div class="form-group">
+      <label for="description">Description: </label> 
+      <input type="text" class="form-control" id="description" required [(ngModel)]="task.description" name="description" value={{task.description}}>
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes: </label> 
+      <input type="text" class="form-control" id="notes" required [(ngModel)]="task.notes" name="notes" value={{task.notes}}>
+    </div>
+    <div class="form-group">
+      <label for="percentComplete">Percent Complete: </label> 
+      <input type="text" class="form-control" id="percentComplete" required [(ngModel)]="task.percentComplete" name="percentComplete" value={{task.percentComplete}}>
+    </div>
+  </form>
 </div>
+<div><a routerLink="subtasks">Subtasks</a></div>
+<button (click)="save()">save</button>
 <router-outlet></router-outlet>

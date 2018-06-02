@@ -182,7 +182,7 @@ public class Task {
 	 */
 	@Override
 	public String toString() {
-		return "" + taskID + " " + name;
+		return "" + taskID + " " + name + " " + assignedUser + " " + priority;
 	}
 
 	/**

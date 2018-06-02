@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { TaskService } from './shared/task/task.service';
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { SubtaskListComponent } from './subtask-list/subtask-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SubtaskListComponent } from './subtask-list/subtask-list.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [ TaskService ],
   bootstrap: [AppComponent]

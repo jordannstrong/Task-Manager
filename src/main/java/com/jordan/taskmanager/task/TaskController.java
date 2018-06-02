@@ -40,10 +40,8 @@ public class TaskController {
 	@PutMapping(value = "/update")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public Task putTask(@RequestBody Task t) {
-		Task task = repository.findById(t.getId()).orElseThrow(() -> new ResourceNotFoundException(t.getName()));
-		task.setName(t.getName());
-		repository.save(task);
-		return task;
+		repository.save(t);
+		return t;
 	}
 	
 	@GetMapping("/get-children/{id}")
@@ -63,4 +61,6 @@ public class TaskController {
 		boolean result = task.getParentID().equals(this.parentID);
 		return result;
 	}
+	
+	
 }

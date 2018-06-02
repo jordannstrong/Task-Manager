@@ -3,7 +3,7 @@ export class Task {
     createdBy: string;
     parentID: number;
     priority: number;
-    assignedUserName: string;
+    assignedUser: string;
     category: string;
     description: string;
     projectNum: number;

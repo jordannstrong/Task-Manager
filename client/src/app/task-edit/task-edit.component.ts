@@ -37,8 +37,7 @@ export class TaskEditComponent implements OnInit {
     this.location.back();
   }
 
-  save(name: string): void {
-    this.task.name = name;
+  save(): void {
     this.taskService.updateTask(this.task).subscribe(() => this.goBack());
   }
 
